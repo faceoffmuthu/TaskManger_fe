@@ -8,7 +8,7 @@ const UserCard = ({ userInfo }) => {
                     <img
                         src={userInfo?.profileImageUrl}
                         alt={`Avatar`}
-                        className='w-16 h-16 rounded-full border-2 border-white'
+                        className='w-16 h-16 rounded-full border-2 border-white object-cover'
                     />
 
                     <div>

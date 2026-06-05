@@ -37,7 +37,7 @@ const SideMenu = ({activeMenu}) => {
         <div className='relative'>
             <img src={user?.profileImageUrl || ""}
              alt="profile"
-             className='w-22 h-22 bg-slate-400 rounded-full'/>
+             className='w-20 h-20 object-cover bg-slate-400 rounded-full'/>
 
         </div>
 
