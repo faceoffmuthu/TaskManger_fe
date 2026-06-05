@@ -19,6 +19,7 @@ const SignUp = () => {
 
 
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ const SignUp = () => {
 
 
     setError('');
+    setIsLoading(true);
 
     // Sign up API call
      try {
@@ -84,6 +86,8 @@ const SignUp = () => {
         setError("Something went wrong. Please try again later.");
       }
 
+    } finally {
+      setIsLoading(false);
     }
 
   };
@@ -138,8 +142,9 @@ const SignUp = () => {
           <button
           type='submit'
           className='btn-primary text-base sm:text-lg mt-1'
+          disabled={isLoading}
           >
-            Sign Up
+            {isLoading ? 'Signing up...' : 'Sign Up'}
           </button>
 
           <p className='text-sm sm:text-base text-slate-800 dark:text-slate-300 mt-2 sm:mt-3 text-center md:text-left'>
